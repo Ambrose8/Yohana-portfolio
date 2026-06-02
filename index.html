@@ -913,6 +913,23 @@
 
   </main>
 
+  <script>
+// Connect to Backend API
+async function loadProjects() {
+    try {
+        const response = await fetch('https://yohana-api.onrender.com/projects');
+        const projects = await response.json();
+        
+        console.log("Projects loaded from API:", projects);
+        // You can later use this data to dynamically show projects
+    } catch (error) {
+        console.log("Backend not reachable yet:", error);
+    }
+}
+
+// Load projects when page loads
+window.onload = loadProjects;
+</script>
 
 
 
